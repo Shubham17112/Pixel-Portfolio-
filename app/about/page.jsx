@@ -65,12 +65,11 @@ export default function AboutPage() {
           <div className="w-full md:w-2/3">
             <SpeechBubble>
               <p className="pixel-font text-lg mb-4">
-                Greetings, traveler! I'm Shubham Mishra, a passionate web developer based in Noida Sector 5, Uttar
+                Greetings, traveler! I'm Shubham Mishra, a passionate web developer & Data Analyst  based in Noida Sector 5, Uttar
                 Pradesh.
               </p>
               <p className="pixel-font text-lg">
-                I'm currently pursuing a hybrid Bachelor's degree in Data Science from IIT (2023-2027). I specialize in
-                building modern web applications using React, Next.js, Django, and other cutting-edge technologies.
+                I'm currently pursuing a hybrid Bachelor's degree in Data Science from IIT (2023-2027). 
               </p>
             </SpeechBubble>
           </div>

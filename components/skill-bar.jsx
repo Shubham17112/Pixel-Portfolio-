@@ -20,7 +20,7 @@ export function SkillBar({ name, level, color }) {
 
       // Animate on scroll
       gsap.to(fill, {
-        width: `${level}%`,
+        width: `${lexel}%`,
         duration: 1.5,
         ease: "power2.out",
         scrollTrigger: {

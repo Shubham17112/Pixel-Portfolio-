@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 
-export default function PixelAvatar({ className = "", size = "medium" }) {
+export default function PixelAvatar({ className = "", size = "medium", src = "/photo.png", alt = "Avatar" }) {
   const avatarRef = useRef(null)
 
   const sizeClasses = {
@@ -16,7 +16,6 @@ export default function PixelAvatar({ className = "", size = "medium" }) {
     const avatar = avatarRef.current
 
     if (avatar) {
-      // Simple floating animation
       gsap.to(avatar, {
         y: "-10px",
         duration: 1.5,
@@ -34,9 +33,15 @@ export default function PixelAvatar({ className = "", size = "medium" }) {
   return (
     <div ref={avatarRef} className={`relative ${sizeClasses[size]} ${className}`}>
       <div className="w-full h-full bg-pixel-dark rounded-lg overflow-hidden border-4 border-pixel-primary">
-        <div className="w-full h-full bg-gradient-to-b from-pixel-dark to-gray-800 flex items-center justify-center">
-          {/* Placeholder for pixel art avatar */}
-          <div className="pixel-text text-4xl text-pixel-primary">{size === "small" ? "S" : "SD"}</div>
+        <div className="w-full h-full bg-gradient-to-b py-3 from-pixel-dark to-gray-800 flex items-center justify-center">
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-full object-cover scale-[1.4] object-bottom " style={{
+              transform: "scale(1.3)", // Zoom the image by 1.3 times
+              objectPosition: "center bottom", // Anchor the image to the bottom
+            }}
+          />
         </div>
       </div>
     </div>
