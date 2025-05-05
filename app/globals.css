@@ -1,0 +1,374 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Responsive Typography System */
+  h1,
+  .h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+    line-height: 1.2;
+  }
+
+  h2,
+  .h2 {
+    @apply text-xl sm:text-2xl md:text-3xl font-bold;
+    line-height: 1.3;
+  }
+
+  h3,
+  .h3 {
+    @apply text-lg sm:text-xl md:text-2xl font-bold;
+    line-height: 1.4;
+  }
+
+  h4,
+  .h4 {
+    @apply text-base sm:text-lg md:text-xl font-bold;
+    line-height: 1.4;
+  }
+
+  p,
+  .body-text {
+    @apply text-base sm:text-lg;
+    line-height: 1.6;
+  }
+
+  .small-text {
+    @apply text-sm sm:text-base;
+    line-height: 1.5;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-pixel-primary;
+  }
+}
+
+/* Pixel Art Styles */
+.pixel-font {
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+.pixel-text {
+  font-family: "VT323", monospace;
+}
+
+.pixel-bg {
+  background-color: #0f0f1b;
+  background-image: linear-gradient(to right, rgba(30, 30, 60, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 30, 60, 0.2) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.pixel-text-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 4px solid #4a5568;
+  border-radius: 2px;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+.pixel-text-box::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #1a202c;
+  pointer-events: none;
+}
+
+.pixel-button {
+  font-family: "Press Start 2P", cursive;
+  border: 4px solid #4a5568;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #2d3748;
+  color: #edf2f7;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  image-rendering: pixelated;
+  position: relative;
+  box-shadow: 0 4px 0 #1a202c;
+}
+
+.pixel-button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1a202c;
+}
+
+.pixel-button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Game Canvas Styles */
+.game-canvas {
+  image-rendering: pixelated;
+  border: 4px solid #4a5568;
+  background-color: #1a202c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* XP Bar Styles */
+.xp-bar {
+  height: 24px;
+  background-color: #2d3748;
+  border: 4px solid #4a5568;
+  position: relative;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  transition: width 1s ease-out;
+}
+
+.xp-bar-fill.blue {
+  background-color: #4299e1;
+}
+
+.xp-bar-fill.purple {
+  background-color: #9f7aea;
+}
+
+.xp-bar-fill.green {
+  background-color: #48bb78;
+}
+
+/* Project Card Styles */
+.project-card {
+  border: 4px solid #4a5568;
+  background-color: #2d3748;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) rotate(2deg);
+}
+
+/* Tool Card Styles */
+.tool-card {
+  border: 4px solid #4a5568;
+  background-color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.05);
+  border-color: #ecc94b;
+}
+
+/* Responsive text utilities */
+.text-responsive {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+}
+
+/* Fluid Typography */
+.fluid-text-sm {
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+}
+
+.fluid-text-base {
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+}
+
+.fluid-text-lg {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+}
+
+.fluid-text-xl {
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+}
+
+.fluid-text-2xl {
+  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+}
+
+.fluid-text-3xl {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+}
+
+.fluid-text-4xl {
+  font-size: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+}
+
+/* Responsive spacing */
+.fluid-p {
+  padding: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+}
+
+.fluid-px {
+  padding-left: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+  padding-right: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+}
+
+.fluid-py {
+  padding-top: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+  padding-bottom: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+}
+
+.fluid-m {
+  margin: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+}
+
+.fluid-mx {
+  margin-left: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+  margin-right: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+}
+
+.fluid-my {
+  margin-top: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+  margin-bottom: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+}
+
+/* Responsive grid */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1rem, 0.8rem + 1vw, 2rem);
+}
+
+.responsive-grid-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem);
+}
+
+.responsive-grid-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+  gap: clamp(1.25rem, 1rem + 1.25vw, 2.5rem);
+}
+
+@media (max-width: 640px) {
+  .pixel-font {
+    letter-spacing: 0.03em;
+  }
+
+  h1.pixel-font {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  /* Improve touch targets on mobile */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background-color: #ecc94b;
+  color: #000;
+  font-weight: bold;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  top: 0;
+}
+
+/* Focus visible utility */
+.focus-visible:focus-visible {
+  outline: 2px solid #ecc94b;
+  outline-offset: 2px;
+}
