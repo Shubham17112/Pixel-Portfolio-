@@ -6,54 +6,70 @@ import { SpeechBubble } from "@/components/speech-bubble"
 export default function AboutPage() {
   const timelineEvents = [
     {
-      year: "2018",
+      year: "2023",
       title: "Started Coding Journey",
       description: "Learned HTML, CSS, and JavaScript",
-      icon: "🧠",
-    },
-    {
-      year: "2019",
-      title: "First Web Project",
-      description: "Built my first portfolio website",
-      icon: "🌐",
-    },
-    {
-      year: "2020",
-      title: "Learned React",
-      description: "Mastered React and modern frontend",
-      icon: "⚛️",
-    },
-    {
-      year: "2021",
-      title: "Freelance Developer",
-      description: "Started working with clients",
-      icon: "💼",
-    },
-    {
-      year: "2022",
-      title: "Full Stack Developer",
-      description: "Expanded skills to backend development",
-      icon: "🔧",
+      icon: "💻", // Laptop for starting coding
     },
     {
       year: "2023",
-      title: "Senior Developer",
-      description: "Leading projects and mentoring",
-      icon: "🚀",
+      title: "First Web Project",
+      description: "Built my first website",
+      icon: "🌐", // Globe for website
     },
+    {
+      year: "2023",
+      title: "Learned React/ Explore More",
+      description: "Mastered React and modern frontend",
+      icon: "⚛️", // Atom for React
+    },
+    {
+      year: "2024",
+      title: "Freelance Developer",
+      description: "Started working with clients",
+      icon: "🧑‍💼", // Person in suit for freelance work
+    },
+    {
+      year: "2024",
+      title: "Learn Django-Flask & Data Analyst tools",
+      description: "Switched to Python",
+      icon: "🐍", // Snake for Python
+    },
+    {
+      year: "2024",
+      title: "Join a company as a Research Analyst – Quantish Opinion",
+      description: "Gain Hand-on experience in Data Analysis",
+      icon: "📊", // Bar chart for data analysis
+    },
+    {
+      year: "2024",
+      title: "Began Participating in Hackathons and Secured Wins in Several",
+      description: "Worked with a team to develop innovative projects integrating AI and Machine Learning.",
+      icon: "🏆", // Trophy for winning
+    },
+    {
+      year: "2025",
+      title: "Learn Django Rest Framework and Imporove Data Analysis Skills",
+      description: "Improvement",
+      icon: "📈", // Upwards graph for improvement
+    }
   ]
+  
 
-  const inventoryItems = [
-    { name: "React.js", level: 95, icon: "⚛️" },
-    { name: "Next.js", level: 90, icon: "▲" },
-    { name: "TypeScript", level: 85, icon: "📘" },
-    { name: "Node.js", level: 80, icon: "🟢" },
-    { name: "Tailwind CSS", level: 90, icon: "🎨" },
-    { name: "MongoDB", level: 75, icon: "🍃" },
+  const inventoryItems =[
+    { name: "React.js", level: 40, icon: "⚛️" },              // ⚛️ is appropriate
+    { name: "Next.js", level: 40, icon: "🌐" },               // "▲" is a placeholder; 🌐 represents full-stack/web
+    { name: "JavaScript", level: 85, icon: "🟨" },             // 📘 is misleading (blue book); use 🟨 for yellow JS
+    { name: "Django / Django REST API", level: 80, icon: "🌿" }, // 🟢 is okay, 🌿 for Django (green-themed)
+    { name: "Tailwind CSS", level: 80, icon: "💨" },           // 🎨 works too, but 💨 (wind) is Tailwind’s emoji match
+    { name: "PostgreSQL", level: 90, icon: "🐘" },             // 🍃 is for MongoDB; 🐘 is PostgreSQL's official mascot
+    { name: "Python", level: 90, icon: "🐍" },                 // 🐍 is perfect
+    { name: "Flask", level: 60, icon: "🥃" },                  // 📚 is generic; 🥃 is often used for Flask
+    { name: "Data Analyst Tools", level: 70, icon: "📊" }     // 📊 better represents data analysis
   ]
-
+  
   return (
-    <main className="min-h-screen bg-black text-white pixel-bg">
+    <main className="min-h-screen bg-black text-white pixel-bg overflow-x-hidden">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-2xl sm:text-3xl md:text-4xl pixel-font text-yellow-400 mb-12 text-center">About Me</h1>
 
@@ -65,11 +81,11 @@ export default function AboutPage() {
           <div className="w-full md:w-2/3">
             <SpeechBubble>
               <p className="pixel-font text-lg mb-4">
-                Greetings, traveler! I'm Shubham Mishra, a passionate web developer & Data Analyst  based in Noida Sector 5, Uttar
-                Pradesh.
+                Greetings, traveler! I'm Shubham Mishra, a passionate web developer & Data Analyst based in Noida Sector
+                5, Uttar Pradesh.
               </p>
               <p className="pixel-font text-lg">
-                I'm currently pursuing a hybrid Bachelor's degree in Data Science from IIT (2023-2027). 
+                I'm currently pursuing a hybrid Bachelor's degree in Data Science from IIT (2023-2027).
               </p>
             </SpeechBubble>
           </div>
