@@ -2,48 +2,14 @@
 
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
-import { SkillBar } from "@/components/skill-bar"
 import { Button } from "@/components/ui/button"
 
 export default function SkillsPage() {
   const pageRef = useRef(null)
 
-  const frontendSkills = [
-    { name: "HTML/CSS", level: 95 },
-    { name: "JavaScript", level: 90 },
-    { name: "React.js", level: 92 },
-    { name: "TypeScript", level: 85 },
-    { name: "Next.js", level: 88 },
-  ]
-
-  const backendSkills = [
-    { name: "Node.js", level: 82 },
-    { name: "Express", level: 80 },
-    { name: "MongoDB", level: 78 },
-    { name: "SQL", level: 75 },
-    { name: "GraphQL", level: 70 },
-  ]
-
-  const otherSkills = [
-    { name: "UI/UX Design", level: 85 },
-    { name: "Git/GitHub", level: 90 },
-    { name: "Responsive Design", level: 95 },
-    { name: "Testing", level: 75 },
-    { name: "Performance Optimization", level: 80 },
-  ]
-
-  const tools = [
-    { name: "VS Code", icon: "📝", description: "Primary code editor" },
-    { name: "Git", icon: "🔄", description: "Version control" },
-    { name: "Figma", icon: "🎨", description: "UI/UX design" },
-    { name: "Chrome DevTools", icon: "🔍", description: "Debugging & testing" },
-    { name: "Terminal", icon: "💻", description: "Command line interface" },
-    { name: "Postman", icon: "📮", description: "API testing" },
-  ]
-
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".skill-category", {
+      gsap.from(".skill-animate", {
         y: 50,
         opacity: 0,
         stagger: 0.2,
@@ -51,7 +17,7 @@ export default function SkillsPage() {
         ease: "power2.out",
       })
 
-      gsap.from(".tool-card", {
+      gsap.from(".card-animate", {
         scale: 0.8,
         opacity: 0,
         stagger: 0.1,
@@ -64,95 +30,82 @@ export default function SkillsPage() {
     return () => ctx.revert()
   }, [])
 
+  const achievements = [
+    {
+      title: "🏆 1st Prize – College-level hackathon Frame Fusion",
+      desc:
+        "Created a short movie with consistent characters and scenes using AI tools. Our team showcased skills in prompt engineering, editing, sound design, content creation, and team spirit.",
+      url: "https://drive.google.com/file/d/1xRPCsPSE9ACAyC-RgFQJr2gzrnQtXiMk/view?usp=sharing", // Replace with actual Google Drive link
+    },
+    {
+      title: "🥉 3rd Prize – HackSprint Hackathon",
+      desc:
+        "Developed an automated voice-controlled app to assist the visually impaired with daily tasks. Our 'Third Eye' could analyze surroundings, read newspapers, recognize currency, and much more.",
+      url: "https://www.linkedin.com/posts/shubh78_last-time-we-proudly-secured-1st-position-activity-7284249018560323584-zk_b?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEma_3cB9HFibuVC7OeLgV1OEYplH-jra4A", // Replace with actual Google Drive link
+    },
+   
+  ]
+
+  const activities = [
+    {
+      title: "🧠 Organized AI Image Generation Hackathon – Paraverse AI",
+      desc: "Conducted and managed an AI-themed hackathon focused on generative tools and creative innovation.",
+      url: "https://drive.google.com/file/d/1ZlHdzxgKNawKU5gUBHUl2aAHIGz5bhpE/view?usp=sharing", // Replace with actual link
+    },
+    {
+      title: "🤖 Participated in Hackathon 2025 – Job Application Bot",
+      desc: "Built a bot to automate job applications using resume parsing and API-based job discovery.",
+      url: "https://drive.google.com/file/d/14wfp0j2qhRU9L5hdNtdVHjJeQm0gs4X_/view?usp=sharing", // Replace with actual link
+    },
+    {
+      title: "⚙️ Improved Job Bot – Hackathon 2025 (Follow-up)",
+      desc: "Enhanced the automation bot to apply intelligently based on job descriptions and matching scores.",
+      url: "https://drive.google.com/file/d/1p5FunATVhmjX_hrZsz8dY_lKLEqdctRS/view?usp=sharing", // Replace with actual link
+    },
+  ]
+
   return (
     <main ref={pageRef} className="min-h-screen bg-black text-white pixel-bg">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl pixel-font text-yellow-400 mb-12 text-center">My Skills</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl pixel-font text-yellow-400 mb-12 text-center skill-animate transform-gpu">
+          My Skills
+        </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <div className="skill-category">
-            <h2 className="text-2xl pixel-font text-green-400 mb-6">Frontend Development</h2>
-            <div className="space-y-6">
-              {frontendSkills.map((skill) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} color="blue" />
-              ))}
-            </div>
-          </div>
-
-          <div className="skill-category">
-            <h2 className="text-2xl pixel-font text-green-400 mb-6">Backend Development</h2>
-            <div className="space-y-6">
-              {backendSkills.map((skill) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} color="purple" />
-              ))}
-            </div>
-          </div>
-
-          <div className="skill-category lg:col-span-2">
-            <h2 className="text-2xl pixel-font text-green-400 mb-6">Other Skills</h2>
-            <div className="space-y-6">
-              {otherSkills.map((skill) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} color="green" />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="skill-category">
-          <h2 className="text-2xl pixel-font text-green-400 mb-6 text-center">Achievements and Activities</h2>
+        <div className="skill-animate">
+          <h2 className="text-2xl pixel-font text-green-400 mb-6 text-center transform-gpu">
+            Achievements
+          </h2>
 
           <div className="space-y-8 max-w-4xl mx-auto">
-            <div className="pixel-text-box p-6">
-              <h3 className="text-xl pixel-font text-yellow-300 mb-4">
-                🏆 1st Prize – College-level hackathon Frame Fusion
-              </h3>
-              <p className="pixel-text text-lg text-gray-300 mb-4">Created a short film using AI.</p>
-              <Button className="pixel-button" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  View Certificate
-                </a>
-              </Button>
-            </div>
+            {achievements.map((item, index) => (
+              <div key={index} className="pixel-text-box p-6 card-animate transform-gpu">
+                <h3 className="text-xl pixel-font text-yellow-300 mb-4">{item.title}</h3>
+                <p className="pixel-text text-lg text-gray-300 mb-4">{item.desc}</p>
+                <Button className="pixel-button" asChild>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    View Certificate
+                  </a>
+                </Button>
+              </div>
+            ))}
+          </div>
 
-            <div className="pixel-text-box p-6">
-              <h3 className="text-xl pixel-font text-yellow-300 mb-4">
-                🥉 3rd Prize – College-level HackSprint Hackathon
-              </h3>
-              <p className="pixel-text text-lg text-gray-300 mb-4">
-                Developed a bot to assist visually impaired individuals.
-              </p>
-              <Button className="pixel-button" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  View Certificate
-                </a>
-              </Button>
-            </div>
+          <h2 className="text-2xl pixel-font text-blue-400 mt-16 mb-6 text-center transform-gpu">
+            Activities
+          </h2>
 
-            <div className="pixel-text-box p-6">
-              <h3 className="text-xl pixel-font text-yellow-300 mb-4">🎓 Bachelor of Science (B.S.) IITM</h3>
-              <p className="pixel-text text-lg text-gray-300 mb-4">
-                Pursuing a hybrid Bachelor's degree in Data Science from IIT (2023-2027).
-              </p>
-              <Button className="pixel-button" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  View Certificate
-                </a>
-              </Button>
-            </div>
-
-            <div className="pixel-text-box p-6">
-              <h3 className="text-xl pixel-font text-yellow-300 mb-4">💼 Research Analyst - Quantish Openion</h3>
-              <p className="pixel-text text-lg text-gray-300 mb-4">
-                Data Analysis and Management: Used Excel to organize, analyze, and visualize data, applying formulas,
-                pivot tables, and charts to uncover trends and insights. Created detailed reports and dashboards to
-                present findings and recommendations clearly to stakeholders.
-              </p>
-              <Button className="pixel-button" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  View Certificate
-                </a>
-              </Button>
-            </div>
+          <div className="space-y-8 max-w-4xl mx-auto">
+            {activities.map((item, index) => (
+              <div key={index} className="pixel-text-box p-6 card-animate transform-gpu">
+                <h3 className="text-xl pixel-font text-yellow-300 mb-4">{item.title}</h3>
+                <p className="pixel-text text-lg text-gray-300 mb-4">{item.desc}</p>
+                <Button className="pixel-button" asChild>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    View Details
+                  </a>
+                </Button>
+              </div>
+            ))}
           </div>
         </div>
       </div>

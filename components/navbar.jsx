@@ -46,9 +46,9 @@ export function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Menu", path: "/menu" },
-    { name: "About", path: "/about" },
+    { name: "About-Skills", path: "/about" },
     { name: "Projects", path: "/projects" },
-    { name: "Skills", path: "/skills" },
+    { name: "Achievements", path: "/skills" },
     { name: "Certifications", path: "/certifications" },
     { name: "Contact", path: "/contact" },
   ]

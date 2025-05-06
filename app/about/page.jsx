@@ -57,17 +57,17 @@ export default function AboutPage() {
   
 
   const inventoryItems =[
-    { name: "React.js", level: 40, icon: "⚛️" },              // ⚛️ is appropriate
-    { name: "Next.js", level: 40, icon: "🌐" },               // "▲" is a placeholder; 🌐 represents full-stack/web
-    { name: "JavaScript", level: 85, icon: "🟨" },             // 📘 is misleading (blue book); use 🟨 for yellow JS
-    { name: "Django / Django REST API", level: 80, icon: "🌿" }, // 🟢 is okay, 🌿 for Django (green-themed)
-    { name: "Tailwind CSS", level: 80, icon: "💨" },           // 🎨 works too, but 💨 (wind) is Tailwind’s emoji match
-    { name: "PostgreSQL", level: 90, icon: "🐘" },             // 🍃 is for MongoDB; 🐘 is PostgreSQL's official mascot
-    { name: "Python", level: 90, icon: "🐍" },                 // 🐍 is perfect
-    { name: "Flask", level: 60, icon: "🥃" },                  // 📚 is generic; 🥃 is often used for Flask
-    { name: "Data Analyst Tools", level: 70, icon: "📊" }     // 📊 better represents data analysis
-  ]
-  
+  { name: "React.js", level: 40, icon: "⚛️" },              // ⚛️ is appropriate
+  { name: "Next.js", level: 40, icon: "🌐" },               // "▲" is a placeholder; 🌐 represents full-stack/web
+  { name: "JavaScript", level: 85, icon: "🟨" },             // 📘 is misleading (blue book); use 🟨 for yellow JS
+  { name: "Django / Django REST API", level: 80, icon: "🌿" }, // 🟢 is okay, 🌿 for Django (green-themed)
+  { name: "Tailwind CSS", level: 80, icon: "💨" },           // 🎨 works too, but 💨 (wind) is Tailwind’s emoji match
+  { name: "PostgreSQL", level: 90, icon: "🐘" },             // 🍃 is for MongoDB; 🐘 is PostgreSQL's official mascot
+  { name: "Python", level: 90, icon: "🐍" },                 // 🐍 is perfect
+  { name: "Flask", level: 60, icon: "🥃" },                  // 📚 is generic; 🥃 is often used for Flask
+  { name: "Data Analyst Tools", level: 70, icon: "📊" }     // 📊 better represents data analysis
+]
+
   return (
     <main className="min-h-screen bg-black text-white pixel-bg overflow-x-hidden">
       <div className="container mx-auto px-4 py-16">
