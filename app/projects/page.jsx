@@ -18,8 +18,7 @@ export default function ProjectsPage() {
       tech: ["Django", "SQLite", "HTML", "CSS"],
       demoUrl: "https://example.com",
       githubUrl: "https://github.com",
-      details:
-        "Built a complete e-commerce solution with product catalog, cart, payment integration, and admin dashboard.",
+      details: "Built a complete e-commerce solution with product catalog, cart, payment integration, and admin dashboard.",
       category: "webdev",
     },
     {
@@ -30,8 +29,7 @@ export default function ProjectsPage() {
       tech: ["Django", "Google Gemini API", "HTML", "CSS"],
       demoUrl: "https://example.com",
       githubUrl: "https://github.com",
-      details:
-        "Developed a resume generator that uses Google Gemini API to create professional resumes based on user input.",
+      details: "Developed a resume generator that uses Google Gemini API to create professional resumes based on user input.",
       category: "webdev",
     },
     {
@@ -53,9 +51,27 @@ export default function ProjectsPage() {
       tech: ["Python", "AI", "Accessibility"],
       demoUrl: "https://example.com",
       githubUrl: "https://github.com",
-      details:
-        "Developed a bot to assist visually impaired individuals that won 3rd prize in the college-level HackSprint Hackathon.",
+      details: "Developed a bot to assist visually impaired individuals that won 3rd prize in the college-level HackSprint Hackathon.",
       category: "datascience",
+    },
+    {
+      id: 5,
+      title: "Call Center Data Analysis – Excel Project",
+      description: "Tools Used: Microsoft Excel (Pivot Tables, Advanced Formulas, Charts, Conditional Formatting)",
+      image: "/image.png",
+      tech: ["Excel"],
+      demoUrl: "https://example.com",
+      githubUrl: "https://github.com/Shubham17112/Excel-Call-CenterDataAny..git",
+      details: [
+        "Developed an interactive Excel dashboard for call center and sales analytics using Power Pivot and DAX.",
+        "Automated data cleaning with Remove Duplicates and dynamic formulas (FILTER, SORT, INDEX, MATCH).",
+        "Used conditional aggregation (SUMIF, COUNTIF, AVERAGEIF, etc.) for multi-condition reporting.",
+        "Built dynamic lookup solutions (VLOOKUP, INDEX+MATCH, XLOOKUP).",
+        "Visualized metrics using PivotTables, slicers, and conditional formatting.",
+        "Applied advanced formulas and FILTER for multi-match queries.",
+        "Delivered YTD sales and call activity reports to aid management decisions."
+      ],
+      category: "dataanalyst",
     },
   ]
 
