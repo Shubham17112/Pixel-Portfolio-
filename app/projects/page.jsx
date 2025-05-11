@@ -60,7 +60,7 @@ export default function ProjectsPage() {
       description: "Tools Used: Microsoft Excel (Pivot Tables, Advanced Formulas, Charts, Conditional Formatting)",
       image: "/image.png",
       tech: ["Excel"],
-      demoUrl: "https://example.com",
+      demoUrl: "https://drive.google.com/file/d/1suKJiFrPEGP6EYgH5AFkrz_HdOOid1J1/view?usp=sharing",
       githubUrl: "https://github.com/Shubham17112/Excel-Call-CenterDataAny..git",
       details: [
         "Developed an interactive Excel dashboard for call center and sales analytics using Power Pivot and DAX.",
